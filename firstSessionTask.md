@@ -38,11 +38,11 @@
   - System
 
 ## 4. **FlowChart**
-![flowcharta](../manage_time_use_case_flowchat.svg)
+![flowcharta](./DiagramsAndCharts/manage_time_use_case_flowchat.svg)
 
 
 ## 5. **Sequence Diagram**
-![sequencediagram](../manage_time_use_case_sequence_diagram.svg)
+![sequencediagram](./DiagramsAndCharts/manage_time_use_case_sequence_diagram.svg)
 
 ## 5. **Pseudo Code (js flavored)**
 ``` js
