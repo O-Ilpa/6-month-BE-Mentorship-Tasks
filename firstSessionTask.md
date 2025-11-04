@@ -27,4 +27,39 @@
   - the system should run on the company existing infrastructure 
 
 
-# **Remaining:** Domain, Actors, **UseCase:** entities, flowchart, seq diagram, pseudo code (manage time)
+## 2. **Domain**
+  the domain of our application is in Human Resources (HR), specifcally the Vacation managment domain which includes handling vacation bundles, awarded vacations, approving and rejection requests
+
+## 3. **Actors**
+###  the actors for this application are the following:
+  - Employees
+  - Clerk (HR)
+  - Manager
+  - System
+
+## 4. **FlowChart**
+![flowcharta](../manage_time_use_case_flowchat.svg)
+
+
+## 5. **Sequence Diagram**
+![sequencediagram](../manage_time_use_case_sequence_diagram.svg)
+
+## 5. **Pseudo Code (js flavored)**
+``` js
+  const manageTime = () => {
+    const isAuthenticated = authenticateEmployee();
+    if (isAuthenticated) {
+      displayBalance();
+    }
+    const makeRequest = () => {
+      const validRequest = validateRequest();
+      if (validRequest) {
+        sendApprovalEmailToManager();
+      }
+    };
+    if (managerIsAuthenticated) {
+      displayPendingRequests();
+      sendResponseToEmployees();
+      redirectToVTSHomePage();
+    }
+  };
