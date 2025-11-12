@@ -38,14 +38,15 @@
   - System
 ## 1. Use Case: Manage Time:-
 ## 1.1 **FlowChart** 
-![flowcharta](../DiagramsAndCharts/manage_time_use_case_flowchat.svg)
+![flowcharta](./DiagramsAndCharts/manage_time_use_case_flowchat.svg)
 
 
 ## 1.2 **Sequence Diagram**
-![sequencediagram](../DiagramsAndCharts/manage_time_use_case_sequence_diagram.svg)
+![sequencediagram](./DiagramsAndCharts/manage_time_use_case_sequence_diagram.svg)
 
 ## 1.3 **Pseudo Code (js flavored)**
 ``` js
+// request vacation
   const manageTime = () => {
     const isAuthenticated = authenticateEmployee();
     if (isAuthenticated) {
@@ -66,12 +67,13 @@
 ```
 ## 2. Use Case: Withdraw Request:-
 ## 2.1 **Flow Chart**
-![alt text](image.png)
+![alt text](./DiagramsAndCharts/image.png)
 
 ## 2.2 **Sequence Diagram**
-![alt text](image-1.png)
+![alt text](./DiagramsAndCharts/image-1.png)
 ## 2.3 **Psuedo Code**
 ``` js
+// withdraw pending request
 const withdrawRequest = (requestId) => {
   const isAuthenticated = authenticateEmployee();
   if (!isAuthenticated) return redirectToLogin();
@@ -93,12 +95,13 @@ const withdrawRequest = (requestId) => {
 
 ## 3. Use Case: cancel Request:-
 ## 3.1 **Flow Chart**
-![test](../DiagramsAndCharts/flowchart-cancelreq.svg)
+![test](./DiagramsAndCharts/flowchart-cancelreq.svg)
 
 ## 3.2 **Sequence Diagram**
-![test](../DiagramsAndCharts/seq-cancelreq.svg)
+![test](./DiagramsAndCharts/seq-cancelreq.svg)
 ## 3.3 **Pseudo code**
 ``` js
+// Cancel Approved request
 const cancelRequest = (requestId) => {
   const isAuthenticated = authenticateEmployee();
   if (!isAuthenticated) return redirectToLogin();
@@ -130,10 +133,10 @@ const cancelRequest = (requestId) => {
 ## 4. Use Case: Edit Request:
 
 ## 4.1 **Flow Chart**
-![test](./edit-reqflowchart.svg)
+![test](./DiagramsAndCharts/edit-reqflowchart.svg)
 
 ## 4.2 **Sequence Diagram**
-![test](./edit-req-seq-diagram.svg)
+![test](./DiagramsAndCharts/edit-req-seq-diagram.svg)
 
 ## 4.3 **Psuedo Code**
 ``` js
@@ -170,4 +173,4 @@ const editPendingRequest = (requestId) => {
 };
 ```
 ## **ERD**
-![entityrelationshipdiagram](../DiagramsAndCharts/ERD.svg)
+![entityrelationshipdiagram](./DiagramsAndCharts/ERD.svg)
