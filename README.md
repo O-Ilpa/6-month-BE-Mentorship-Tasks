@@ -217,3 +217,9 @@ CREATE TABLE order_details (
   FOREIGN KEY (product_id) REFERENCES prodcut(product_id)
 )
 ```
+## 2. **Identify the relationships between entities**
+- category --> product (one-to-many) 
+- product --> order_details (many-to-one) 
+- order --> customer (many-to-one) 
+- order --> order_details (one-to-many)
+
