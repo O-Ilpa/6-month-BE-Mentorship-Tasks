@@ -225,3 +225,31 @@ CREATE TABLE order_details (
 
 ## 3. **Draw the ERD diagram of this sample schema**
 ![ERD for the tables](./DiagramsAndCharts/commerce_erd.svg) 
+## 4. ***total revenue for a specific date*
+```sql
+SELECT SUM(total_amount) AS total_revenue
+FROM `order`
+WHERE DATE(order_date) = '2025-11-26';
+```
+## 5. **top selling monthly report**
+```sql
+SELECT p.name, SUM(od.quantity) AS total_sold
+FROM order_details od
+JOIN product p ON od.product_id = p.product_id
+JOIN `order` o ON od.order_id = o.order_id
+WHERE MONTH(o.order_date) = 11 AND YEAR(o.order_date) = 2025
+GROUP BY p.product_id, p.name
+ORDER BY total_sold DESC
+LIMIT 5;
+
+```
+## 6. **customers with more than 500$ total_spent**
+```sql
+SELECT c.first_name, c.last_name, SUM(o.total_amount) AS total_spent
+FROM customer c
+JOIN `order` o ON c.customer_id = o.customer_id
+WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)
+GROUP BY c.customer_id, c.first_name, c.last_name
+HAVING total_spent > 500;
+
+```
