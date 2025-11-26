@@ -223,3 +223,5 @@ CREATE TABLE order_details (
 - order --> customer (many-to-one) 
 - order --> order_details (one-to-many)
 
+## 3. **Draw the ERD diagram of this sample schema**
+![ERD for the tables](./DiagramsAndCharts/commerce_erd.svg) 
