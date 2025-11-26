@@ -1,4 +1,4 @@
-# **Vacation tracking system**
+<!-- # **Vacation tracking system**
 
 ## 1. ***Requirements***
 
@@ -173,4 +173,47 @@ const editPendingRequest = (requestId) => {
 };
 ```
 ## **ERD**
-![entityrelationshipdiagram](./DiagramsAndCharts/ERD.svg)
+![entityrelationshipdiagram](./DiagramsAndCharts/ERD.svg) -->
+# 2nd Project: E-Commerce Database Design
+## 1. **Create the DB schema script with the following entities**
+```sql
+CREATE DATABASE E_Commerce;
+USE E_Commerce;
+
+CREATE TABLE category (
+  category_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  category_name VARCHAR(100) NOT NULL
+)
+CREATE TABLE product (
+  product_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  category_id INT NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  description VARCHAR(200) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  stock_quantity INT NOT NULL,
+  FOREIGN KEY (category_id) REFERENCES category(category_id)
+)
+CREATE TABLE customer (
+  customer_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(10) NOT NULL,
+  last_name VARCHAR(10) NOT NULL,
+  email VARCHAR(40) NOT NULL,
+  password VARCHAR(40) NOT NULL
+)
+CREATE TABLE order (
+  order_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  customer_id INT NOT NULL,
+  order_date DATETIME NOT NULL,
+  total_amount DECIMAL(20, 2) NOT NULL,
+  FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+)
+CREATE TABLE order_details (
+  order_detail_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  order_id INT NOT NULL,
+  product_id INT NOT NULL,
+  quantity INT NOT NULL,
+  unit_price DECIMAL(10, 2),
+  FOREIGN KEY (order_id) REFERENCES order(order_id),
+  FOREIGN KEY (product_id) REFERENCES prodcut(product_id)
+)
+```
